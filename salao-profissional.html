@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salão Tania e Letycia</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:'Roboto',sans-serif;
+background:#f5f5f5;
+color:#333;
+scroll-behavior:smooth;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:#111;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+z-index:1000;
+}
+
+header h2{
+font-family:'Playfair Display';
+}
+
+nav{
+display:flex;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ff4081;
+}
+
+/* MENU MOBILE */
+
+.menu-btn{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* BANNER */
+
+.banner{
+margin-top:80px;
+height:500px;
+background:url('https://i.pinimg.com/originals/87/28/7c/87287caaa7ca2187191c2aec23d4faa8.jpg');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:50px;
+font-family:'Playfair Display';
+text-shadow:2px 2px 10px black;
+}
+
+/* SERVIÇOS */
+
+.servicos{
+padding:60px 40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card h3{
+padding:15px;
+font-family:'Playfair Display';
+}
+
+.card p{
+padding:0 15px 15px;
+}
+
+.card button{
+margin:15px;
+padding:10px 20px;
+border:none;
+background:#ff4081;
+color:white;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.card button:hover{
+background:#e91e63;
+}
+
+/* GALERIA */
+
+.galeria{
+padding:50px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.grid img{
+width:100%;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.grid img:hover{
+transform:scale(1.05);
+}
+
+/* CONTATO */
+
+.contato{
+background:#fff3f8;
+padding:60px;
+text-align:center;
+}
+
+.contato input{
+width:80%;
+max-width:400px;
+padding:12px;
+margin:10px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.contato button{
+padding:12px 25px;
+background:#ff4081;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.contato button:hover{
+background:#e91e63;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+font-size:30px;
+padding:18px;
+border-radius:50%;
+text-decoration:none;
+box-shadow:0 4px 15px rgba(0,0,0,.3);
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+display:none;
+flex-direction:column;
+background:#111;
+position:absolute;
+top:70px;
+right:0;
+width:200px;
+padding:20px;
+}
+
+nav.show{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+
+.banner{
+font-size:30px;
+text-align:center;
+padding:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h2>Salão Tania e Letycia</h2>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<nav id="menu">
+
+<a href="#">Início</a>
+<a href="#servicos">Serviços</a>
+<a href="#galeria">Galeria</a>
+<a href="#contato">Contato</a>
+
+</nav>
+
+</header>
+
+<div class="banner">
+Beleza e Estilo
+</div>
+
+<section class="servicos" id="servicos">
+
+<div class="card">
+<img src="https://portogente.com.br/images/2025/visagismo/artigo1/image5.jpg">
+<h3>Corte</h3>
+<p>Corte moderno profissional</p>
+<button onclick="agendar()">Agendar</button>
+</div>
+
+<div class="card">
+<img src="https://www.fabmood.com/wp-content/uploads/2024/12/hair_colour_trends_22217.jpg">
+<h3>Escova</h3>
+<p>Cabelo liso perfeito</p>
+<button onclick="agendar()">Agendar</button>
+</div>
+
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJAdjCD2m76EZh0m1K9cU_ryGKTtxOTzadvyxRnlPIApaAfZIm">
+<h3>Manicure</h3>
+<p>Unhas lindas</p>
+<button onclick="agendar()">Agendar</button>
+</div>
+
+<div class="card">
+<img src="https://cdn0.casamentos.com.br/vendor/3517/3_2/640/jpeg/56859619-c388-42c9-a9f8-3eb7bf11103a_13_423517-170800985978779.jpeg">
+<h3>Maquiagem</h3>
+<p>Maquiagem profissional</p>
+<button onclick="agendar()">Agendar</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200&auto=format&fit=crop" alt="Depilação">
+<h3>Depilação</h3>
+<p>Depilação com cera profissional</p>
+<button onclick="agendar()">Agendar</button>
+</div>
+
+</section>
+
+<section class="galeria" id="galeria">
+
+<div class="grid">
+
+<img src="https://i.pinimg.com/564x/6d/6e/1a/6d6e1a2c0f2c6c5c52f06b5b7d5f71d1.jpg">
+<img src="https://i.pinimg.com/564x/98/55/32/9855329f2fef0f1b5f3ed3a9f09f1d8a.jpg">
+<img src="https://i.pinimg.com/564x/3f/8d/91/3f8d91d3b1df19b2f4f1c9c9a4d7df6e.jpg">
+<img src="https://i.pinimg.com/564x/20/1b/37/201b37c3a7d5a5e13c1fa6a4c3e3e4b6.jpg">
+
+</div>
+
+</section>
+
+<section class="contato" id="contato">
+
+<h2>Agende seu horário</h2>
+
+<input type="text" placeholder="Seu nome" id="nome">
+<br>
+
+<input type="tel" placeholder="Telefone" id="tel">
+<br>
+
+<button onclick="agendarWhats()">Agendar pelo WhatsApp</button>
+
+<p style="margin-top:20px">📞 48 98841-3507</p>
+<p>📍 Rio Cedro Alto</p>
+
+<iframe
+src="https://www.google.com/maps?q=Rio+Cedro+Alto&output=embed"
+width="100%"
+height="300"
+style="border:0;margin-top:20px;border-radius:10px">
+</iframe>
+
+</section>
+
+<a href="https://wa.me/5548988413507" class="whatsapp">💬</a>
+
+<footer>
+© 2026 Salão Tania e Letycia
+</footer>
+
+<script>
+
+function toggleMenu(){
+
+document.getElementById("menu").classList.toggle("show")
+
+}
+
+function agendar(){
+
+let msg="Olá! Gostaria de agendar um horário no salão.";
+
+window.open("https://wa.me/5548988413507?text="+encodeURIComponent(msg))
+
+}
+
+function agendarWhats(){
+
+let nome=document.getElementById("nome").value
+let tel=document.getElementById("tel").value
+
+let msg=`Olá meu nome é ${nome} e meu telefone é ${tel}. Gostaria de agendar.`
+
+window.open("https://wa.me/5548988413507?text="+encodeURIComponent(msg))
+
+}
+
+</script>
+
+</body>
+</html>
